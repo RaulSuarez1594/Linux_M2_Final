@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
+// ----- Declaration of the mutex variable and its respective initialization -----
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
 int x=0;
 
 void* thread_func(void* args){
@@ -9,7 +12,9 @@ void* thread_func(void* args){
     int i;
     for ( i = 0; i < 10000000; i++ )
     {
+        pthread_mutex_lock(&mutex);//-> Allows to request access to the mutex, the thread blocks until it is obtained
         x++; 
+        pthread_mutex_unlock(&mutex);//-> Allow free mutex
     } 
 }
 
