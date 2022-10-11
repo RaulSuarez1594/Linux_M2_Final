@@ -40,12 +40,3 @@ void foo(int var4) {
     foo(var4);
 
 }
-
-int main()
-{
-    // Once we call foo, we don't return
-    for (int i = 0 ; i < 5; i++)
-        foo(0);
-        
-    return 0;
-}
