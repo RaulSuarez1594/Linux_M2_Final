@@ -70,6 +70,8 @@ int main(int arg, char *argv[])
     }
     else
     {
-        printf("It's impossible to get the properties");
+        printf("Impossible get the properties");
     }
 }
+
+
