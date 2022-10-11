@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include "./lib/memory_leaks.h"
+#include "./src/include/memory_leaks.h"
 
 int main(int argc, char const *argv[])
 {
