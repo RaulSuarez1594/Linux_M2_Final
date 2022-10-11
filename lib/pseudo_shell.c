@@ -15,7 +15,7 @@ int spawn (char* program, char** arg_list)
 {
 	pid_t child_pid;
 	child_pid = fork ();
-	if (child_pid == 0)
+	if (child_pid != 0)
     return child_pid;
 	else {
 		execvp (program, arg_list);
