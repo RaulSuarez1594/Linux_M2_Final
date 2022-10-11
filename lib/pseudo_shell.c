@@ -26,6 +26,11 @@ int spawn (char* program, char** arg_list)
 // ----- Principal function -----
 int pseudo_shell (int argc, char *argv[])
 {	
+    //Checks that the program is called correctly
+    if (argc != 2) {                        
+        printf("Usage: %s <pseudo-command>\n", argv[0]);
+        return 1;
+    }
 	//Checks that the pseudo-command is correct.
     //Loads necessary arguments and call function to execute it
     if (strcmp(argv[1],"fecha") == 0)
