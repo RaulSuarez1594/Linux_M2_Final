@@ -47,7 +47,7 @@ void printFileSize(struct stat stats)
 
 void printFileAccess(struct stat stats)
 {
-    printf("\nFile Permissions: ");
+    printf("File Permissions: ");
     printf( (S_ISDIR(stats.st_mode)) ? "d" : "-");
     printf( (stats.st_mode & S_IRUSR) ? "r" : "-");
     printf( (stats.st_mode & S_IWUSR) ? "w" : "-");
@@ -67,6 +67,9 @@ void printFileInode(struct stat stats)
 
 void printFileCreateDate(struct stat stats)
 {
+    struct tm dt;
+    dt = *(gmtime(&stats.st_ctim));
+    printf("\nCreate on: %02d-%02d-%02d %02d:%02d:%02d \n", dt.tm_mday, dt.tm_mon + 1, dt.tm_year + 1900, dt.tm_hour - 5, dt.tm_min, dt.tm_sec);
 }
 
 void printFilePropietary(struct stat stats)
@@ -105,7 +108,7 @@ void printFileCharacterCount(char *file_)
         }
     }
 
-    printf("\nThe alphanumeric count is : %i /n", characters);
+    printf("\nThe alphanumeric count is : %i \n", characters);
     fclose(file);
 
 }
@@ -119,19 +122,19 @@ int main(int arg, char *argv[])
     if (lstat(argv[1], &stats) == 0)
     {
 
-        /*if (printFileType(stats))
+        if (printFileType(stats))
          {
              printFileCharacterCount(argv[1]);
          }
          else
          {
              printf(" \nThe alphanumeric count is: The file is not a regular file");
-         }*/
+         }
         printFileSize(stats);
         printFilePropietary(stats);
-        /*printFileAccess(stats);
+        printFileAccess(stats);
         printFileInode(stats);
-        printFileCreateDate(stats);*/
+        printFileCreateDate(stats);
     }
     else
     {
