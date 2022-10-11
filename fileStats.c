@@ -61,6 +61,7 @@ void printFilePropietary(struct stat stats)
 
 void printFileCharacterCount(char *file_)
 {
+
     char ch;
     FILE *file;
     int characters = 0;
@@ -78,6 +79,9 @@ void printFileCharacterCount(char *file_)
             characters++;
         }
     }
+
+}
+
 
     printf("\nThe alphanumeric count is : %i /n", characters);
     fclose(file);
@@ -107,6 +111,8 @@ int main(int arg, char *argv[])
     }
     else
     {
-        printf("It's impossible to get the properties");
+        printf("Impossible get the properties");
     }
+
 }
+
