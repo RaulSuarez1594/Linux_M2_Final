@@ -26,17 +26,40 @@ void printFileInode(struct stat stats)
 
 void printFileCreateDate(struct stat stats)
 {
-    
+    struct tm dt;
+    dt = *(gmtime(&stats.st_ctim));
+    printf("\nCreate on: %02d-%02d-%02d %02d:%02d:%02d \n", dt.tm_mday, dt.tm_mon + 1, dt.tm_year + 1900, dt.tm_hour - 5, dt.tm_min, dt.tm_sec);
 }
 
 void printFilePropietary(struct stat stats)
 {
-
+    struct passwd pws;
+    pws = *getpwuid(stats.st_uid);
+    printf("\nPropietary: %s, User UID %d ", pws.pw_name, stats.st_uid);
 }
 
 void printFileCharacterCount(char *file_)
 {
+    char ch;
+    FILE *file;
+    int characters = 0;
+    file = fopen(file_, "r");
+    if (file == NULL)
+    {
+        printf("\nCannot open file %s", file_);
+    }
 
+    while (!feof(file))
+    {
+        ch = fgetc(file);
+        if (isalpha(ch) || isdigit(ch))
+        {
+            characters++;
+        }
+    }
+
+    printf("\nThe alphanumeric count is : %i ", characters);
+    fclose(file);
 }
 
 
@@ -64,10 +87,6 @@ int main(int arg, char *argv[])
     }
     else
     {
-        printf("It's impossible to get the properties");
+        printf("Impossible get the properties");
     }
 }
-
-
-
-
