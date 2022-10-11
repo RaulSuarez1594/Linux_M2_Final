@@ -6,8 +6,7 @@
 #include <unistd.h>
 #include "mouse_powerState.h"
 
-void suspend_RAM(int argc, char **argv)
-{
+void suspend_RAM(int argc, char **argv) {
     int fd;
     struct input_event ev;
 
