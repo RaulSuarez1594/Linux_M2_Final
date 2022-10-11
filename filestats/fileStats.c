@@ -7,33 +7,6 @@
 #include <time.h>
 #include "fileStats.h"
 
-int main(int arg, char *argv[])
-{
-
-    struct stat stats;
-
-    if (lstat(argv[1], &stats) == 0)
-    {
-
-        if (printFileType(stats))
-         {
-             printFileCharacterCount(argv[1]);
-         }
-         else
-         {
-             printf(" \nThe alphanumeric count is: The file is not a regular file");
-         }
-        printFileSize(stats);
-        printFilePropietary(stats);
-        printFileAccess(stats);
-        printFileInode(stats);
-        printFileCreateDate(stats);
-    }
-    else
-    {
-        printf("Impossible get the properties");
-    }
-}
 
 int printFileType(struct stat stats)
 {
