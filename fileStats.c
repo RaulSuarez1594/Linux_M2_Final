@@ -47,10 +47,22 @@ void printFileSize(struct stat stats)
 
 void printFileAccess(struct stat stats)
 {
+    printf("\nFile Permissions: ");
+    printf( (S_ISDIR(stats.st_mode)) ? "d" : "-");
+    printf( (stats.st_mode & S_IRUSR) ? "r" : "-");
+    printf( (stats.st_mode & S_IWUSR) ? "w" : "-");
+    printf( (stats.st_mode & S_IXUSR) ? "x" : "-");
+    printf( (stats.st_mode & S_IRGRP) ? "r" : "-");
+    printf( (stats.st_mode & S_IWGRP) ? "w" : "-");
+    printf( (stats.st_mode & S_IXGRP) ? "x" : "-");
+    printf( (stats.st_mode & S_IROTH) ? "r" : "-");
+    printf( (stats.st_mode & S_IWOTH) ? "w" : "-");
+    printf( (stats.st_mode & S_IXOTH) ? "x" : "-");
 }
 
 void printFileInode(struct stat stats)
 {
+    printf("\nInode: %d", stats.st_ino);
 }
 
 void printFileCreateDate(struct stat stats)
@@ -59,6 +71,7 @@ void printFileCreateDate(struct stat stats)
 
 void printFilePropietary(struct stat stats)
 {
+
     struct passwd *pw = NULL;
     pw = getpwuid(stats.st_uid);
 
@@ -74,7 +87,6 @@ void printFilePropietary(struct stat stats)
 
 void printFileCharacterCount(char *file_)
 {
-
     char ch;
     FILE *file;
     int characters = 0;
@@ -95,6 +107,7 @@ void printFileCharacterCount(char *file_)
 
     printf("\nThe alphanumeric count is : %i /n", characters);
     fclose(file);
+
 }
 
 
