@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
 
     if (pid == 0)
     {
-        foo(0);
+        memory_leaks();
     }
     else 
     {
