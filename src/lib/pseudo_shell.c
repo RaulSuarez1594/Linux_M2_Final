@@ -33,7 +33,8 @@ int pseudo_shell (int argc, char *argv)
 //    }
 	//Checks that the pseudo-command is correct.
     //Loads necessary arguments and call function to execute it
-    if (strcmp(argv[1],"fecha") == 0)
+    printf("hola\n");
+    if (strcmp(argv,"fecha") == 0)
     {
         char* arg_list[] = {
             "date",
@@ -41,7 +42,7 @@ int pseudo_shell (int argc, char *argv)
         };
         spawn("date", arg_list);
     }
-    else if (strcmp(argv[1],"quiensoy") == 0)
+    else if (strcmp(argv,"quiensoy") == 0)
     {
         char* arg_list[] = {
             "whoami",
@@ -49,7 +50,7 @@ int pseudo_shell (int argc, char *argv)
         };
         spawn("whoami", arg_list);
     }
-    else if (strcmp(argv[1],"tiempo") == 0)
+    else if (strcmp(argv,"tiempo") == 0)
     {
         char* arg_list[] = {
             "uptime",
@@ -58,7 +59,7 @@ int pseudo_shell (int argc, char *argv)
         };
         spawn("uptime", arg_list);
     }
-    else if (strcmp(argv[1],"personal") == 0)
+    else if (strcmp(argv,"personal") == 0)
     {
         char* arg_list[] = {
             "../A1/test",
