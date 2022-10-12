@@ -5,7 +5,7 @@
 #include <pwd.h>
 #include <ctype.h>
 #include <time.h>
-#include "fileStats.h"
+#include "../include/fileStats.h"
 
 
 int printFileType(struct stat stats)
