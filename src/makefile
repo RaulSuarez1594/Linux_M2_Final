@@ -1,3 +1,4 @@
+#COMPILER_PREFIX=../compiler/arm-linux-gnueabihf-
 COMPILER_PREFIX=
 CC=gcc
 CFLAGS=
@@ -14,5 +15,5 @@ $(LIB)pseudo_shell.so: $(LIB)pseudo_shell.c
 	$(COMPILER_PREFIX)$(CC) $(CFLAGS) $(SHARE) $(LIB)pseudo_shell.c -o libpseudo_shell.so
 
 $(LIB)threads_race_condition.so: $(LIB)threads_race_condition.c
-        $(COMPILER_PREFIX)$(CC) $(CFLAGS) $(SHARE) $(LIB)threads_race_condition.c -o libthreads_race_condition.so
+	$(COMPILER_PREFIX)$(CC) $(CFLAGS) $(SHARE) $(LIB)threads_race_condition.c -o libthreads_race_condition.so
 

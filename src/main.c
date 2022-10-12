@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "include/pseudo_shell.h"
 #include "include/threads_race_condition.h"
@@ -14,8 +15,8 @@ int main(int argc, char** argv)
 
     switch(num)
     {
-        case 5:
-            char* arg;
+        case 5: 
+            char *arg;
             printf("Pseudo-command?\n");
             printf("fecha, quiensoy, tiempo, personal\n");
             scanf("%s", arg);
