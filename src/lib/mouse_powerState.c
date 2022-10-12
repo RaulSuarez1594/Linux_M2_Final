@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "mouse_powerState.h"
+#include "../include/mouse_powerState.h"
 
 void suspend_RAM(int argc, char **argv) {
     int fd;
