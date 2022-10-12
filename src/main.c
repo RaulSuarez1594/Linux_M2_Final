@@ -16,10 +16,10 @@ int gOption = 0;
 
 int main(int argc, char **argv)
 {
-	//do
-	//{
+	do
+	{
 		menu();
-	//} while (gOption != 3);
+	} while (gOption != 7);
 
 	return EXIT_SUCCESS;
 }
@@ -27,21 +27,22 @@ int main(int argc, char **argv)
 
 void menu(void)
 {
+	char arg[100];
 	printf("\t *****************************************\n");
 	printf("\t ------		Main menu	------\n");
 	printf("\t *****************************************\n");
 	printf("\t Which program would you like to execute\?\n");
 	printf("\t Select an option\n");
-	printf("\t [5] pseudo shell     [6] threads race condition      [3] exit\n");
+	printf("\t [5] pseudo shell     [6] threads race condition      [7] exit\n");
 	scanf("%d",&gOption);
 	system("clear");
 
 	switch(gOption){
 		case PSEUDO_SHELL:
 			printf("Pseudo-command?\n");
-            printf("fecha, quiensoy, tiempo, personal\n");
-            scanf("%s", arg);
-            pseudo_shell(2,arg);
+            printf("fecha, quiensoy, tiempo, modulos\n");
+			scanf("%s", arg);
+            pseudo_shell(2, arg);
 		break;
 
 		case THREADS_RACE_CONDITION:
@@ -51,6 +52,5 @@ void menu(void)
 		default:
             printf("Invalid option\n");
 	}
-
-
+	printf("\n\n\n");
 }
