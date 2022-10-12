@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "include/pseudo_shell.h"
 #include "include/threads_race_condition.h"
