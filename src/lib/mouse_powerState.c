@@ -6,11 +6,12 @@
 #include <unistd.h>
 #include "../include/mouse_powerState.h"
 
-void suspend_RAM(int argc, char **argv) {
+void suspend_RAM(int argc, char **path) {
     int fd;
     struct input_event ev;
+    printf("File recieved: %s\n", path[1]);
 
-    fd = open(argv[1], O_RDONLY);
+    fd = open(path[1], O_RDONLY);
 
     for (int i = 0; i < 100; ++i)
     {
@@ -26,6 +27,6 @@ void suspend_RAM(int argc, char **argv) {
 
     // suspend system
     fd = open("/sys/power/state", O_RDWR);
-    write(fd, "mem", 3);
+    //write(fd, "mem", 3);
     close(fd);
 }
