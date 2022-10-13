@@ -89,9 +89,12 @@ void printFileInode(struct stat stats)
 
 void printFileCreateDate(struct stat stats)
 {
-    struct tm dt;
-    dt = *(gmtime(&stats.st_ctim));
-    printf("\nCreate on: %02d-%02d-%02d %02d:%02d:%02d \n", dt.tm_mday, dt.tm_mon + 1, dt.tm_year + 1900, dt.tm_hour - 5, dt.tm_min, dt.tm_sec);
+    char ctime[80];
+	time_t t = stats.st_ctime;
+	struct tm lt;
+	localtime_r(&t, &lt);
+	strftime(ctime, sizeof ctime, "%a, %d, %b %Y %T", &lt);
+	printf("\nThe creation day was: %s\n", ctime);
 }
 
 void printFilePropietary(struct stat stats)
