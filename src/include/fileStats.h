@@ -1,3 +1,12 @@
+#include <stdio.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <pwd.h>
+#include <ctype.h>
+#include <time.h>
+
+int printFileStats(int argc, char **argv);
 int printFileType(struct stat stats);
 void printFileSize(struct stat stats);
 void printFileAccess(struct stat stats);

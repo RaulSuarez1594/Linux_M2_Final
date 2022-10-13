@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <linux/input.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "../include/mouse_powerState.h"
 
 void suspend_RAM(int argc, char **path) {
@@ -27,6 +21,6 @@ void suspend_RAM(int argc, char **path) {
 
     // suspend system
     fd = open("/sys/power/state", O_RDWR);
-    //write(fd, "mem", 3);
+    write(fd, "mem", 3);
     close(fd);
 }
