@@ -25,7 +25,7 @@ int pause(void){
 int main(){
 
     int gOption = 0;
-    char subOption;
+    char subOption,arg[100];
     do{
         menu();
         scanf("%d", &gOption);
