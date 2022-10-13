@@ -3,24 +3,15 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int memory_leaks(){
+void memory_leaks(){
 	char *path = NULL;
-    int itr = 0;
+	char *copy = NULL;
 
-	while(itr < 1000) {
-		// A free call must exist for every malloc call
-	    path = malloc(100);
-	    free(path);
-        path = NULL;
-
-        //strdup() returns a pointer to a null-terminated string    
-		//the memory obtained is done dynamically using malloc and hece it can be freed using free.
-	    path = strdup("STRING");
+	while(1) {
+		path=malloc(100);
+	    copy = strdup("STRING");
         free(path);
-	    path = NULL;
-        itr++;
+		free(copy);
 	}
-	printf("Execution finished\n");
-	return 0;
-}
 
+}

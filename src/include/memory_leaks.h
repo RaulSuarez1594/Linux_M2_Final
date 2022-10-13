@@ -1,2 +1,2 @@
-#pragma once
-void memory_leaks();
+int memory_leaks(void);
+
