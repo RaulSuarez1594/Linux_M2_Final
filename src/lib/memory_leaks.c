@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void memory_leaks(){
+int memory_leaks(){
 	char *path = NULL;
     	int itr = 0;
 
@@ -21,6 +21,8 @@ void memory_leaks(){
 
             itr++;
 	}
+	printf("Memory Leaks has finished execution\n");
+	return 0;
 }
 
 

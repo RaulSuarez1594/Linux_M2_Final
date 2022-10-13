@@ -10,7 +10,7 @@ void foo2(void) {
     printf("I've just printfed \n");
 }
 
-void foo(int var4) {
+void memory_map(int var4) {
 
     static int var1 = 0;
     int var2 = 0;
@@ -37,6 +37,6 @@ void foo(int var4) {
 
     /*The function foo calls itself this causes it to 
     encounter a segmentation error*/
-    foo(var4);
+    memory_map(var4);
     
 }
