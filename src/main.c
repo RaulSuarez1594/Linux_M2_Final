@@ -31,7 +31,7 @@ int pause(void){
 }
 
 int main(){
-
+    int pid, exit_status;
     int gOption = 0;
     char subOption,arg[100];
     do{
@@ -51,8 +51,7 @@ int main(){
                 suspend_RAM(1, arg);
 		        break;
             case MEMORY_MAP:
-                int pid = fork();
-                int exit_status = 0;
+                pid = fork();
                 if (pid == 0)
                 {
                     memory_map(0);
