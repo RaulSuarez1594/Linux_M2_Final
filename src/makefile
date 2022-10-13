@@ -1,5 +1,4 @@
-#COMPILER_PREFIX=../compiler/arm-linux-gnueabihf-
-COMPILER_PREFIX=~/Documents/Module_2/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+COMPILER_PREFIX=../toolchain_linaro/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
 CC=gcc
 CFLAGS=
 LIB=./lib/
