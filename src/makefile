@@ -36,7 +36,7 @@ $(LIB)lib_memory_map.so: $(LIB)memory_map.c $(INCLUDE)memory_map.h
 all: main 
 
 install:
-	@sudo ln -s -f /home/raul/Documents/Linux/Linux_M2_Final/src/lib/*.so /usr/lib/
+	@sudo ln -s -f /home/debian/src/lib/*.so /usr/lib/
 
 clean:
 	@rm -f ./lib/*.so main
