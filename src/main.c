@@ -6,12 +6,16 @@
 // Header files
 #include "include/pseudo_shell.h"
 #include "include/threads_race_condition.h"
+#include "include/mouse_powerState.h"
+#include "include/fileStats.h"
 
 void menu(void);
 
 enum{
-    PSEUDO_SHELL = 5,
-    THREADS_RACE_CONDITION,
+	FILESTATS = 1,
+	MOUSE_POWERSTATE = 2,
+	PSEUDO_SHELL = 5,
+	THREADS_RACE_CONDITION = 6,
     EXIT
 };
 
@@ -20,7 +24,6 @@ int pause(void){
     printf("\n\n\n\nPress any character on the keyboard and then the ENTER key\n");
     scanf("%s",pausa);    
 }
-
 
 int main(){
 
@@ -31,6 +34,17 @@ int main(){
         scanf("%d", &gOption);
         system("clear");
         switch(gOption){
+            case FILESTATS:
+                printf("Type the file?\n");
+                scanf("%s", arg);
+                printFileStats(1, arg);
+                break;
+		    case MOUSE_POWERSTATE:
+                //If you want to use this program, you must run main program as root user.
+                printf("Type the direction?\n");
+                scanf("%s", arg);
+                suspend_RAM(1, arg);
+		        break;
             case PSEUDO_SHELL:    
                 printf("Pseudo-command?\n");
                 printf("fecha, quiensoy, tiempo, modulos\n");
@@ -64,8 +78,8 @@ void menu(void)
     printf("\t *****************************************\n");
     printf("\t Which program would you like to execute\?\n");
     printf("\t Select an option\n");
-    printf("\t [1]\n");
-    printf("\t [2]\n");
+    printf("\t [1] file stats \n");
+    printf("\t [2] mouse power state \n");
     printf("\t [3]\n");
     printf("\t [4]\n");
     printf("\t [5] Pseudo shell\n");
