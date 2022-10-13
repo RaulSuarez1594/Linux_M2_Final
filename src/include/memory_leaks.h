@@ -1,2 +1,3 @@
+int memory_leaks(void);
 
-void memory_leaks();
+
