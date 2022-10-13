@@ -53,14 +53,13 @@ int pseudo_shell (int argc, char *argv)
         };
         spawn("uptime", arg_list);
     }
-    else if (strcmp(argv,"personal") == 0)
+    else if (strcmp(argv,"modulos") == 0)
     {
         char* arg_list[] = {
-            "../A1/test",
-            "../A1/mitexto.txt",
+            "lsmod",
             NULL
         };
-        spawn("../A1/test", arg_list);
+        spawn("lsmod", arg_list);
     }
     else
     {
