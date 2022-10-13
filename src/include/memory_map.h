@@ -1,3 +1,4 @@
+#pragma once
 
-//Funcion que usara main para acceder a ese programa
-int memory_map(void);
+void foo(int var4);
+void foo2(void);
