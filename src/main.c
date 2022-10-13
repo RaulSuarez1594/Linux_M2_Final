@@ -9,7 +9,8 @@ void menu(void);
 
 enum{
 	PSEUDO_SHELL = 5,
-	THREADS_RACE_CONDITION
+	THREADS_RACE_CONDITION,
+	EXIT
 };
 
 int gOption = 0;
@@ -27,13 +28,18 @@ int main(int argc, char **argv)
 
 void menu(void)
 {
-	char arg[100];
+	char arg[50];
 	printf("\t *****************************************\n");
-	printf("\t ------		Main menu	------\n");
+	printf("\t *****************************************\n");
+	printf("\t ------		MAIN MENU	------\n");
+	printf("\t *****************************************\n");
 	printf("\t *****************************************\n");
 	printf("\t Which program would you like to execute\?\n");
 	printf("\t Select an option\n");
-	printf("\t [5] pseudo shell     [6] threads race condition      [7] exit\n");
+	printf("\t 5.pseudo shell\n");     
+    printf("\t 6.threads race condition \n");
+	printf("\t 7.exit \n");
+	printf(">> ");
 	scanf("%d",&gOption);
 	system("clear");
 
@@ -49,8 +55,11 @@ void menu(void)
 			threads_race_condition();
 		break;
 
-		default:
-            printf("Invalid option\n");
+		case EXIT:
+	 		printf("Exit was chosen!\n");
+	 	break;
+	 	default:
+	 		printf("INVALID INPUT!\n");
 	}
 	printf("\n\n\n");
 }
