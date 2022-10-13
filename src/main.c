@@ -8,14 +8,18 @@
 #include "include/threads_race_condition.h"
 #include "include/mouse_powerState.h"
 #include "include/fileStats.h"
+#include "include/memory_leaks.h"
+#include "include/memory_map.h"
 
 void menu(void);
 
 enum{
 	FILESTATS = 1,
-	MOUSE_POWERSTATE = 2,
-	PSEUDO_SHELL = 5,
-	THREADS_RACE_CONDITION = 6,
+	MOUSE_POWERSTATE,
+	MEMORY_MAP,
+    MEMORY_LEAKS,
+    PSEUDO_SHELL,
+	THREADS_RACE_CONDITION,
     EXIT
 };
 
@@ -45,6 +49,12 @@ int main(){
                 scanf("%s", arg);
                 suspend_RAM(1, arg);
 		        break;
+            case MEMORY_MAP:
+                memory_map(0);
+                break;
+            case MEMORY_LEAKS:
+                memory_leaks();
+                break;
             case PSEUDO_SHELL:    
                 printf("Pseudo-command?\n");
                 printf("fecha, quiensoy, tiempo, modulos\n");
@@ -80,8 +90,8 @@ void menu(void)
     printf("\t Select an option\n");
     printf("\t [1] file stats \n");
     printf("\t [2] mouse power state \n");
-    printf("\t [3]\n");
-    printf("\t [4]\n");
+    printf("\t [3] memory map\n");
+    printf("\t [4] memory leaks\n");
     printf("\t [5] Pseudo shell\n");
     printf("\t [6] Threads race condition\n");
     printf("\t [7] Exit\n");
