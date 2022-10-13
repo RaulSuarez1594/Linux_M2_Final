@@ -6,7 +6,7 @@
 #include <ctype.h>
 #include <time.h>
 
-int printFileStats(int argc, char **argv);
+int printFileStats(int argc, char *argv);
 int printFileType(struct stat stats);
 void printFileSize(struct stat stats);
 void printFileAccess(struct stat stats);

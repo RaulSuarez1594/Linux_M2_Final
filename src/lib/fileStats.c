@@ -1,14 +1,14 @@
 #include "../include/fileStats.h"
 
-int printFileStats(int agrc, char **argv)
+int printFileStats(int agrc, char *argv)
 {
     struct stat stats;
 
-    if (lstat(argv[1], &stats) == 0)
+    if (lstat(argv, &stats) == 0)
     {
         if (printFileType(stats))
         {
-            printFileCharacterCount(argv[1]);
+            printFileCharacterCount(argv);
         }
         else
         {
