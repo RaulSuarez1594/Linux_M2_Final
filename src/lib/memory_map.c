@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+#define MAX 1024
+
+#include <stdio.h>
+#include <stdlib.h>
 #define MAX 1024
 
 int var3 = 0;
