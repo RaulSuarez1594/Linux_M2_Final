@@ -34,7 +34,7 @@ int bar()
     return bar();
 }
 
-int memory_regions()
+int memory_map()
 {
     for (int i = 0 ; i < 5; i++)
         foo(0);

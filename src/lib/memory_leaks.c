@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void mem_leak(){
+void memory_leaks(){
 	char *path = NULL;
 	char *copy = NULL;
 
