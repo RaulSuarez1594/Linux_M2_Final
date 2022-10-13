@@ -1,2 +1,1 @@
-# Linux_M2_Final
-Final Project – CTEP Linux M2
+<img src="/images/M02_final_project.png">
