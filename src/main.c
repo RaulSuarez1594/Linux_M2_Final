@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 // Header files
 #include "include/pseudo_shell.h"
@@ -50,7 +51,17 @@ int main(){
                 suspend_RAM(1, arg);
 		        break;
             case MEMORY_MAP:
-                memory_map(0);
+                int pid = fork();
+                int exit_status = 0;
+                if (pid == 0)
+                {
+                    memory_map(0);
+                    return -1;
+                }
+                else
+                {
+                    exit_status = wait(NULL);
+                }                
                 break;
             case MEMORY_LEAKS:
                 memory_leaks();

@@ -11,6 +11,10 @@ void foo2(void) {
 }
 
 void memory_map(int var4) {
+    size_t buffer_1[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    size_t buffer_2[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    size_t buffer_3[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    size_t buffer_4[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     static int var1 = 0;
     int var2 = 0;
