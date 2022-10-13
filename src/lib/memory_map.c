@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX 1024
+
 int var3 = 0;
 
 void foo2(void) {
@@ -7,6 +9,12 @@ void foo2(void) {
 }
 
 void foo(int var4) {
+    // Declaring big arrays so that it takes fewer function calls to overflown the stack.
+    size_t buffer_1[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    size_t buffer_2[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    size_t buffer_3[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    size_t buffer_4[1024] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
     static int var1 = 0;
     int var2 = 0;
     int* var5;
@@ -20,25 +28,15 @@ void foo(int var4) {
     
     (*var5)++;
     
-    printf("var1: %d at %p\n",var1, &var1);
-    printf("var2: %d at %p\n",var2, &var2);
-    printf("var3: %d at %p\n",var3, &var3);
-    printf("var4: %d at %p\n",var4, &var4);
-    printf("var5: %d at %p\n",*var5, var5);
-    printf("var6: - at %p\n", var6);
-    
-}
+    printf("=============================\n");
+    printf("var1: %3d at %15p\n",var1, &var1);
+    printf("var2: %3d at %15p\n",var2, &var2);
+    printf("var3: %3d at %15p\n",var3, &var3);
+    printf("var4: %3d at %15p\n",var4, &var4);
+    printf("var5: %3d at %15p\n",*var5, var5);
+    printf("var6:  -  at %15p\n", var6);
+    printf("This function has called itself %d times\n", var4);
+    // This function calls itself every time.
+    foo(var4);
 
-int bar() 
-{
-    return bar();
-}
-
-int memory_map()
-{
-    for (int i = 0 ; i < 5; i++)
-        foo(0);
-        bar();
-        
-    return 0;
 }
