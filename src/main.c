@@ -4,6 +4,7 @@
 
 #include "include/pseudo_shell.h"
 #include "include/threads_race_condition.h"
+#include "include/mouse_powerState.h"
 
 void menu(void);
 
