@@ -5,4 +5,4 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-void suspend_RAM(int argc, char **argv);
+void suspend_RAM(int argc, char *argv);

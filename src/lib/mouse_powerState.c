@@ -1,11 +1,11 @@
 #include "../include/mouse_powerState.h"
 
-void suspend_RAM(int argc, char **path) {
+void suspend_RAM(int argc, char *path) {
     int fd;
     struct input_event ev;
-    printf("File recieved: %s\n", path[1]);
+    printf("File recieved: %s\n", path);
 
-    fd = open(path[1], O_RDONLY);
+    fd = open(path, O_RDONLY);
 
     for (int i = 0; i < 100; ++i)
     {
