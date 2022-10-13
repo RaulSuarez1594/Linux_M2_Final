@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "threads_race_condition.h": "c",
-        "mouse_powerstate.h": "c"
-    }
-}
