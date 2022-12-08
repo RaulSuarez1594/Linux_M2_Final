@@ -1,6 +1,16 @@
 <img src="/images/M02_final_project.png">
 
 
+## Application Preview
+
+
+<p align="center">
+  <img src="/images/Aplication_preview.png" alt="Image" width="500" style="display: block; margin: 0 auto" />
+<p/>
+
+
+
+
 ### ⚒️ Tool Used
 
 This project was built using the following tools:
