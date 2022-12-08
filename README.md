@@ -8,8 +8,8 @@ This project was built using the following tools:
 - Git - Github
 - C
 - Dinamic libraries 
-- Makefile
 - Linaro (toolchain)
+- Makefile
 
 
 
@@ -24,7 +24,7 @@ To get this project up and running locally, you must already have installed the 
 <!-- CONTRIBUTING -->
 ### 🛠️ Contribution Guidelines
 
-You want to contribute! Let us now how with your PR!
+You want to contribute! Let us know how with your PR!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
